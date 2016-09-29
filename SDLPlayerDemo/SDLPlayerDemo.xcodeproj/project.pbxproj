@@ -31,6 +31,7 @@
 		061004D11D9A5EF6006230A9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061004671D9A54F3006230A9 /* AudioToolbox.framework */; };
 		061004D31D9A5F23006230A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061004D21D9A5F23006230A9 /* AVFoundation.framework */; };
 		061004D71D9A6307006230A9 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061004D61D9A6307006230A9 /* SDL2.framework */; };
+		06BCE4CD1D9BC12E000AEF90 /* ds.mov in Resources */ = {isa = PBXBuildFile; fileRef = 06BCE4CC1D9BC12E000AEF90 /* ds.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +170,7 @@
 		061004CF1D9A5DC9006230A9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		061004D21D9A5F23006230A9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		061004D61D9A6307006230A9 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
+		06BCE4CC1D9BC12E000AEF90 /* ds.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ds.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 		061003BD1D9A4B03006230A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				06BCE4CC1D9BC12E000AEF90 /* ds.mov */,
 				061003BE1D9A4B03006230A9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -513,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				061003CD1D9A4B03006230A9 /* LaunchScreen.storyboard in Resources */,
+				06BCE4CD1D9BC12E000AEF90 /* ds.mov in Resources */,
 				061003CA1D9A4B03006230A9 /* Assets.xcassets in Resources */,
 				061003C81D9A4B03006230A9 /* Main.storyboard in Resources */,
 			);
@@ -722,6 +726,7 @@
 				061003D31D9A4B03006230A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
