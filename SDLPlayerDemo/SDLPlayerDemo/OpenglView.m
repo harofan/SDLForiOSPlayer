@@ -103,24 +103,6 @@ enum TextureType
     
     //释放malloc分配的内存空间
     free(blackData);
-    
-    
-//    /**
-//     更新纹理
-//     https://my.oschina.net/sweetdark/blog/175784
-//     @param target#>  说明纹理对象是几维的 description#>
-//     @param level#>   指定要Mipmap的等级 description#>
-//     @param xoffset#> 纹理数据的偏移x值 description#>
-//     @param yoffset#> 纹理数据的偏移y值 description#>
-//     @param width#>   更新到现在的纹理中的纹理数据的规格宽 description#>
-//     @param height#>  高 description#>
-//     @param format#>  告诉OpenGL内部用什么格式存储和使用这个纹理数据 description#>
-//     @param type#>    颜色分量的数据类型 description#>
-//     @param pixels#>  YUV数据 description#>
-//
-//     @return <#return value description#>
-//     */
-//    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, <#GLsizei width#>, <#GLsizei height#>, <#GLenum format#>, <#GLenum type#>, <#const GLvoid *pixels#>)
 }
 
 
@@ -140,6 +122,80 @@ enum TextureType
  @param h    <#h description#>
  */
 -(void)displayYUV420pData:(void *)data width:(NSInteger)w height:(NSInteger)h{
+    
+    if (!self.window) {
+        return;
+    }
+    
+    //加互斥锁,防止其他线程访问
+    @synchronized (self) {
+        
+        if (w != _videoW || h != _videoH) {
+            [self setVideoSize:(GLuint)w height:(GLuint)h];
+        }
+        
+        //设置当前上下文
+        [EAGLContext setCurrentContext:_glContext];
+        
+        //绑定
+        glBindTexture(GL_TEXTURE_2D, _textureYUV[TEXY]);
+        
+        /**
+         更新纹理
+         https://my.oschina.net/sweetdark/blog/175784
+         @param target#>  说明纹理对象是几维的 description#>
+         @param level#>   指定要Mipmap的等级 description#>
+         @param xoffset#> 纹理数据的偏移x值 description#>
+         @param yoffset#> 纹理数据的偏移y值 description#>
+         @param width#>   更新到现在的纹理中的纹理数据的规格宽 description#>
+         @param height#>  高 description#>
+         @param format#>  告诉OpenGL内部用什么格式存储和使用这个纹理数据 description#>
+         @param type#>    颜色分量的数据类型 description#>
+         @param pixels#>  YUV数据 description#>
+         
+         @return <#return value description#>
+         */
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, (GLsizei)w, (GLsizei)h, GL_RED_EXT, GL_UNSIGNED_BYTE, data);
+        
+        glBindTexture(GL_TEXTURE_2D, _textureYUV[TEXU]);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, (GLsizei)w/2, (GLsizei)h/2, GL_RED_EXT, GL_UNSIGNED_BYTE, data + w * h);
+        
+        glBindTexture(GL_TEXTURE_2D, _textureYUV[TEXV]);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, (GLsizei)w/2, (GLsizei)h/2, GL_RED_EXT, GL_UNSIGNED_BYTE, data + w * h * 5 / 4);
+        
+        //渲染
+        [self render];
+    }
+    
+#ifdef DEBUG
+    
+    GLenum err = glGetError();
+    if (err != GL_NO_ERROR)
+    {
+        printf("GL_ERROR=======>%d\n", err);
+    }
+    struct timeval nowtime;
+    gettimeofday(&nowtime, NULL);
+    if (nowtime.tv_sec != _time.tv_sec)
+    {
+        printf("视频 %ld 帧率:   %d\n", self.tag, _frameRate);
+        memcpy(&_time, &nowtime, sizeof(struct timeval));
+        _frameRate = 1;
+    }
+    else
+    {
+        _frameRate++;
+    }
+#endif
+}
+
+
+/**
+ 渲染
+ */
+-(void)render{
+    
+    
     
 }
 @end
