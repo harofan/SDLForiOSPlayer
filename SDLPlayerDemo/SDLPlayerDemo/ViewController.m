@@ -14,8 +14,12 @@
 
 #import "swscale.h"
 
-//#import <SDL2/SDL.h>
+#import <OpenGLES/ES3/gl.h>
 
+#import <GLKit/GLKit.h>
+
+
+#define screenSize [UIScreen mainScreen].bounds.size
 @interface ViewController ()
 
 @end
@@ -30,7 +34,20 @@
     //NSLog(@"打印配置信息==================%s",avcodec_configuration());
    
     //解码
-    [self decode];
+//    [self decode];
+    
+//    GLKView * view_glk = [[GLKView alloc]init];
+//    
+//    view_glk.backgroundColor = [UIColor blackColor];
+//    
+//    view_glk.frame = CGRectMake(0, 100, screenSize.width, 200);
+//    
+//    [self.view addSubview:view_glk];
+//    [self.view.layer addSublayer:view_glk.layer];
+    
+}
+-(void)test{
+    
     
 }
 
@@ -194,6 +211,7 @@
                 //data解码后的图像像素数据
                 //linesize对视频来说是一行像素的大小
                 sws_scale(img_convert_ctx, (const uint8_t * const *)pFream->data, pFream->linesize, 0, pCodecCtx->height, pFreamYUV->data, pFreamYUV->linesize);
+                
                 
                 NSLog(@"解码序号%d",frame_cnt);
                 

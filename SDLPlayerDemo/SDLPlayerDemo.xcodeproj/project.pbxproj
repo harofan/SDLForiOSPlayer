@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060DD8021DA8EA3400338F88 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060DD8011DA8EA3400338F88 /* GLKit.framework */; };
 		061003BF1D9A4B03006230A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 061003BE1D9A4B03006230A9 /* main.m */; };
 		061003C21D9A4B03006230A9 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 061003C11D9A4B03006230A9 /* AppDelegate.mm */; };
 		061003C51D9A4B03006230A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 061003C41D9A4B03006230A9 /* ViewController.m */; };
@@ -30,10 +31,12 @@
 		061004D01D9A5DC9006230A9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061004CF1D9A5DC9006230A9 /* OpenGLES.framework */; };
 		061004D11D9A5EF6006230A9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061004671D9A54F3006230A9 /* AudioToolbox.framework */; };
 		061004D31D9A5F23006230A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061004D21D9A5F23006230A9 /* AVFoundation.framework */; };
+		065B27631DA9E16400F4FDB7 /* OpenglView.m in Sources */ = {isa = PBXBuildFile; fileRef = 065B27621DA9E16400F4FDB7 /* OpenglView.m */; };
 		06BCE4CD1D9BC12E000AEF90 /* ds.mov in Resources */ = {isa = PBXBuildFile; fileRef = 06BCE4CC1D9BC12E000AEF90 /* ds.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060DD8011DA8EA3400338F88 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		061003BA1D9A4B03006230A9 /* SDLPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		061003BE1D9A4B03006230A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		061003C01D9A4B03006230A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 		061004CD1D9A5DBE006230A9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		061004CF1D9A5DC9006230A9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		061004D21D9A5F23006230A9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		065B27611DA9E16400F4FDB7 /* OpenglView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglView.h; sourceTree = "<group>"; };
+		065B27621DA9E16400F4FDB7 /* OpenglView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglView.m; sourceTree = "<group>"; };
 		06BCE4CC1D9BC12E000AEF90 /* ds.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ds.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,9 +181,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060DD8021DA8EA3400338F88 /* GLKit.framework in Frameworks */,
+				061004D01D9A5DC9006230A9 /* OpenGLES.framework in Frameworks */,
 				061004D31D9A5F23006230A9 /* AVFoundation.framework in Frameworks */,
 				061004D11D9A5EF6006230A9 /* AudioToolbox.framework in Frameworks */,
-				061004D01D9A5DC9006230A9 /* OpenGLES.framework in Frameworks */,
 				061004CE1D9A5DBE006230A9 /* QuartzCore.framework in Frameworks */,
 				061004CC1D9A5DB5006230A9 /* CoreGraphics.framework in Frameworks */,
 				0610045F1D9A543E006230A9 /* CoreMedia.framework in Frameworks */,
@@ -225,6 +231,8 @@
 				061003C31D9A4B03006230A9 /* ViewController.h */,
 				061003C41D9A4B03006230A9 /* ViewController.m */,
 				061003C61D9A4B03006230A9 /* Main.storyboard */,
+				065B27611DA9E16400F4FDB7 /* OpenglView.h */,
+				065B27621DA9E16400F4FDB7 /* OpenglView.m */,
 				061003C91D9A4B03006230A9 /* Assets.xcassets */,
 				061003CB1D9A4B03006230A9 /* LaunchScreen.storyboard */,
 				061003CE1D9A4B03006230A9 /* Info.plist */,
@@ -434,6 +442,7 @@
 		061004531D9A523F006230A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				060DD8011DA8EA3400338F88 /* GLKit.framework */,
 				061004D21D9A5F23006230A9 /* AVFoundation.framework */,
 				061004CF1D9A5DC9006230A9 /* OpenGLES.framework */,
 				061004CD1D9A5DBE006230A9 /* QuartzCore.framework */,
@@ -526,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				061003C51D9A4B03006230A9 /* ViewController.m in Sources */,
+				065B27631DA9E16400F4FDB7 /* OpenglView.m in Sources */,
 				061003C21D9A4B03006230A9 /* AppDelegate.mm in Sources */,
 				061003BF1D9A4B03006230A9 /* main.m in Sources */,
 			);
