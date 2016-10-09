@@ -8,6 +8,13 @@
 
 #import "OpenglView.h"
 
+enum AttribEnum
+{
+    ATTRIB_VERTEX,
+    ATTRIB_TEXTURE,
+    ATTRIB_COLOR,
+};
+
 //YUV数据枚举
 enum TextureType
 {
@@ -76,17 +83,17 @@ enum TextureType
     
     
     /**
-     加载纹理
+     根据像素数据,加载纹理
 
-     @param target#>         说明纹理对象是几维的 description#>
-     @param level#>          指定要Mipmap的等级 description#>
-     @param internalformat#> 告诉OpenGL内部用什么格式存储和使用这个纹理数据（一个像素包含多少个颜色成分，是否压缩） description#>
+     @param target#>         指定目标纹理，这个值必须是GL_TEXTURE_2D。 description#>
+     @param level#>          执行细节级别。0是最基本的图像级别，n表示第N级贴图细化级别 description#>
+     @param internalformat#> 指定纹理中的颜色格式。可选的值有GL_ALPHA,GL_RGB,GL_RGBA,GL_LUMINANCE, GL_LUMINANCE_ALPHA 等几种。 description#>
      @param width#>          纹理的宽度 description#>
      @param height#>         高度 description#>
-     @param border#>         纹理的边界宽度 description#>
-     @param format#>         像素格式 description#>
-     @param type#>           像素参数数据类型 description#>
-     @param pixels#>         指向图像数据 description#>
+     @param border#>         纹理的边框宽度,必须为0 description#>
+     @param format#>         像素数据的颜色格式, 不需要和internalformatt取值必须相同。可选的值参考internalformat。 description#>
+     @param type#>           指定像素数据的数据类型。可以使用的值有GL_UNSIGNED_BYTE,GL_UNSIGNED_SHORT_5_6_5,GL_UNSIGNED_SHORT_4_4_4_4,GL_UNSIGNED_SHORT_5_5_5_1等。 description#>
+     @param pixels#>         指定内存中指向图像数据的指针 description#>
 
      @return <#return value description#>
      */
@@ -143,15 +150,15 @@ enum TextureType
         /**
          更新纹理
          https://my.oschina.net/sweetdark/blog/175784
-         @param target#>  说明纹理对象是几维的 description#>
-         @param level#>   指定要Mipmap的等级 description#>
+         @param target#>  指定目标纹理，这个值必须是GL_TEXTURE_2D。 description#>
+         @param level#>   执行细节级别。0是最基本的图像级别，n表示第N级贴图细化级别 description#>
          @param xoffset#> 纹理数据的偏移x值 description#>
          @param yoffset#> 纹理数据的偏移y值 description#>
          @param width#>   更新到现在的纹理中的纹理数据的规格宽 description#>
          @param height#>  高 description#>
-         @param format#>  告诉OpenGL内部用什么格式存储和使用这个纹理数据 description#>
+         @param format#>  像素数据的颜色格式, 不需要和internalformatt取值必须相同。可选的值参考internalformat。 description#>
          @param type#>    颜色分量的数据类型 description#>
-         @param pixels#>  YUV数据 description#>
+         @param pixels#>  指定内存中指向图像数据的指针 description#>
          
          @return <#return value description#>
          */
@@ -195,7 +202,49 @@ enum TextureType
  */
 -(void)render{
     
+    //设置上下文
+    [EAGLContext setCurrentContext:_glContext];
+    
+    CGSize size = self.bounds.size;
+    
+    //把数据显示在这个视窗上
+    glViewport(1, 1, size.width * _viewScale -2, size.height * _viewScale -2);
+    
+    static const GLfloat squareVertices[] = {
+        -1.0f, -1.0f,
+        1.0f, -1.0f,
+        -1.0f,  1.0f,
+        1.0f,  1.0f,
+    };
     
     
+    static const GLfloat coordVertices[] = {
+        0.0f, 1.0f,
+        1.0f, 1.0f,
+        0.0f,  0.0f,
+        1.0f,  0.0f,
+    };
+    
+    //更新属性值
+    glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+    //开启定点属性数组
+    glEnableVertexAttribArray(ATTRIB_VERTEX);
+    
+    
+    glVertexAttribPointer(ATTRIB_TEXTURE, 2, GL_FLOAT, 0, 0, coordVertices);
+    glEnableVertexAttribArray(ATTRIB_TEXTURE);
+    
+    //绘制
+    
+    //当采用顶点数组方式绘制图形时，使用该函数。该函数根据顶点数组中的坐标数据和指定的模式，进行绘制。
+    //绘制方式,从数组的哪一个点开始绘制(一般为0),顶点个数
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    
+    //将该渲染缓冲区对象绑定到管线上
+    glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
+    
+    //把缓冲区（render buffer和color buffer）的颜色呈现到UIView上
+    [_glContext presentRenderbuffer:GL_RENDERBUFFER];
+
 }
 @end
