@@ -198,13 +198,187 @@ enum TextureType
  */
 - (void)setupYUVTexture{
     
+    if (_textureYUV[TEXY])
+    {
+        //删除纹理
+        glDeleteTextures(3, _textureYUV);
+    }
+    
+    //生成纹理
+    glGenTextures(3, _textureYUV);
+    if (!_textureYUV[TEXY] || !_textureYUV[TEXU] || !_textureYUV[TEXV])
+    {
+        NSLog(@"<<<<<<<<<<<<纹理创建失败!>>>>>>>>>>>>");
+        return;
+    }
+    
+    //选择当前活跃单元
+    glActiveTexture(GL_TEXTURE0);
+    //绑定Y纹理
+    glBindTexture(GL_TEXTURE_2D, _textureYUV[TEXY]);
+    //纹理过滤函数
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);//放大过滤
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);//缩小过滤
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);//水平方向
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);//垂直方向
+    
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, _textureYUV[TEXU]);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    
+    glActiveTexture(GL_TEXTURE2);
+    glBindTexture(GL_TEXTURE_2D, _textureYUV[TEXV]);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    
 }
+
+#define FSH @"varying lowp vec2 TexCoordOut;\
+\
+uniform sampler2D SamplerY;\
+uniform sampler2D SamplerU;\
+uniform sampler2D SamplerV;\
+\
+void main(void)\
+{\
+mediump vec3 yuv;\
+lowp vec3 rgb;\
+\
+yuv.x = texture2D(SamplerY, TexCoordOut).r;\
+yuv.y = texture2D(SamplerU, TexCoordOut).r - 0.5;\
+yuv.z = texture2D(SamplerV, TexCoordOut).r - 0.5;\
+\
+rgb = mat3( 1,       1,         1,\
+0,       -0.39465,  2.03211,\
+1.13983, -0.58060,  0) * yuv;\
+\
+gl_FragColor = vec4(rgb, 1);\
+\
+}"
+
+#define VSH @"attribute vec4 position;\
+attribute vec2 TexCoordIn;\
+varying vec2 TexCoordOut;\
+\
+void main(void)\
+{\
+gl_Position = position;\
+TexCoordOut = TexCoordIn;\
+}"
 
 /**
  加载着色器
  */
 - (void)loadShader{
+   	/**
+     1 编译着色
+     */
+    GLuint vertexShader = [self compileShader:VSH withType:GL_VERTEX_SHADER];
+    GLuint fragmentShader = [self compileShader:FSH withType:GL_FRAGMENT_SHADER];
     
+    /**
+     2
+     */
+    //创建程序容器
+    _program = glCreateProgram();
+    //绑定shader到program
+    glAttachShader(_program, vertexShader);
+    glAttachShader(_program, fragmentShader);
+    
+    /**
+     绑定需要在link之前
+     */
+    //把顶点属性索引绑定到顶点属性名
+    glBindAttribLocation(_program, ATTRIB_VERTEX, "position");
+    glBindAttribLocation(_program, ATTRIB_TEXTURE, "TexCoordIn");
+    
+    //链接
+    glLinkProgram(_program);
+    
+    /**
+     3
+     */
+    GLint linkSuccess;
+    //查询相关信息,并将数据返回到linkSuccess
+    glGetProgramiv(_program, GL_LINK_STATUS, &linkSuccess);
+    if (linkSuccess == GL_FALSE) {
+        GLchar messages[256];
+        glGetProgramInfoLog(_program, sizeof(messages), 0, &messages[0]);
+        NSString *messageString = [NSString stringWithUTF8String:messages];
+        NSLog(@"<<<<着色器连接失败 %@>>>", messageString);
+        //exit(1);
+    }
+    
+    if (vertexShader)
+        /*
+         释放内存不能立刻删除
+         If a shader object to be deleted is attached to a program object, it will be flagged for deletion, but it will not be deleted until it is no longer attached to any program object…
+          shader 删除该着色器对象（如果一个着色器对象在删除前已经链接到程序对象中，那么当执行glDeleteShader函数时不会立即被删除，而是该着色器对象将被标记为删除，器内存被释放一次，它不再链接到其他任何程序对象）
+         */
+        glDeleteShader(vertexShader);
+    if (fragmentShader)
+        glDeleteShader(fragmentShader);
+}
+
+/**
+ 编译着色代码
+
+ @param shaderString 代码
+ @param shaderType   类型
+
+ @return 成功返回着色器,失败返回-1
+ */
+- (GLuint)compileShader:(NSString*)shaderString withType:(GLenum)shaderType
+{
+    
+   	/**
+     1
+     */
+    if (!shaderString) {
+//        NSLog(@"Error loading shader: %@", error.localizedDescription);
+        exit(1);
+    }
+    else
+    {
+        //NSLog(@"shader code-->%@", shaderString);
+    }
+    
+    /**
+     2
+     */
+    GLuint shaderHandle = glCreateShader(shaderType);
+    
+    /**
+     3
+     */
+    const char * shaderStringUTF8 = [shaderString UTF8String];
+    int shaderStringLength = [shaderString length];
+    glShaderSource(shaderHandle, 1, &shaderStringUTF8, &shaderStringLength);
+    
+    /**
+     4
+     */
+    glCompileShader(shaderHandle);
+    
+    /**
+     5
+     */
+    GLint compileSuccess;
+    glGetShaderiv(shaderHandle, GL_COMPILE_STATUS, &compileSuccess);
+    if (compileSuccess == GL_FALSE) {
+        GLchar messages[256];
+        glGetShaderInfoLog(shaderHandle, sizeof(messages), 0, &messages[0]);
+        NSString *messageString = [NSString stringWithUTF8String:messages];
+        NSLog(@"%@", messageString);
+        exit(1);
+    }
+    
+    return shaderHandle;
 }
 
 #pragma mark -  接口
