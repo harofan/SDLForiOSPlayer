@@ -147,17 +147,24 @@ enum TextureType
 {
     //创建帧缓冲绑定
     glGenFramebuffers(1, &_framebuffer);
+    //创建渲染缓冲
     glGenRenderbuffers(1, &_renderBuffer);
     
+    //将之前用glGenFramebuffers创建的帧缓冲绑定为当前的Framebuffer(绑定到context上？).
     glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
+    //Renderbuffer绑定到context上,此时当前Framebuffer完全由renderbuffer控制
     glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
     
-    
+    //分配空间
     if (![_glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer *)self.layer])
     {
         NSLog(@"attach渲染缓冲区失败");
     }
+    
+    //这个函数看起来有点复杂，但其实它很好理解的。它要做的全部工作就是把把前面我们生成的深度缓存对像与当前的FBO对像进行绑定，当然我们要注意一个FBO有多个不同绑定点，这里是要绑定在FBO的深度缓冲绑定点上。
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _renderBuffer);
+    
+    //检查当前帧缓存的关联图像和帧缓存参数
     if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
     {
         NSLog(@"创建缓冲区错误 0x%x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
@@ -173,11 +180,13 @@ enum TextureType
 {
     if (_framebuffer)
     {
+        //删除FBO
         glDeleteFramebuffers(1, &_framebuffer);
     }
     
     if (_renderBuffer)
     {
+        //删除渲染缓冲区
         glDeleteRenderbuffers(1, &_renderBuffer);
     }
     
