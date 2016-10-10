@@ -18,9 +18,13 @@
 
 #import <GLKit/GLKit.h>
 
+#import "OpenglView.h"
+
 
 #define screenSize [UIScreen mainScreen].bounds.size
 @interface ViewController ()
+
+@property(nonatomic,strong)OpenglView * openglView;
 
 @end
 
@@ -32,9 +36,6 @@
     
     //打印ffmpeg配置信息
     //NSLog(@"打印配置信息==================%s",avcodec_configuration());
-   
-    //解码
-//    [self decode];
     
 //    GLKView * view_glk = [[GLKView alloc]init];
 //    
@@ -45,6 +46,27 @@
 //    [self.view addSubview:view_glk];
 //    [self.view.layer addSublayer:view_glk.layer];
     
+    OpenglView * openglView = [[OpenglView alloc]initWithFrame:CGRectMake(0, 100, screenSize.width, 200)];
+    
+    openglView.backgroundColor = [UIColor greenColor];
+    
+    [self.view addSubview:openglView];
+    
+    [openglView setVideoSize:screenSize.width height:200];
+    
+    NSString * path = [[NSBundle mainBundle]pathForResource:@"image_420_700.yuv" ofType:nil];
+    
+    NSData * data = [NSData dataWithContentsOfFile:path];
+    
+    UInt32 * pFream = (UInt32*)[data bytes];
+    
+    [openglView displayYUV420pData:pFream width:screenSize.width height:200];
+    
+    
+    self.openglView = openglView;
+    
+    //解码
+//    [self decode];
 }
 -(void)test{
     
@@ -212,6 +234,7 @@
                 //linesize对视频来说是一行像素的大小
                 sws_scale(img_convert_ctx, (const uint8_t * const *)pFream->data, pFream->linesize, 0, pCodecCtx->height, pFreamYUV->data, pFreamYUV->linesize);
                 
+//                [self.openglView displayYUV420pData:pFreamYUV->data width:screenSize.width height:200];
                 
                 NSLog(@"解码序号%d",frame_cnt);
                 

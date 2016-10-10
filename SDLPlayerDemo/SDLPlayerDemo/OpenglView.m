@@ -26,7 +26,181 @@ enum TextureType
 
 @implementation OpenglView
 
+#pragma mark -  初始化等操作
+- (BOOL)doInit{
+    //用来显示opengl的图形
+    CAEAGLLayer *eaglLayer = (CAEAGLLayer*) self.layer;
+    //eaglLayer.opaque = YES;
+    
+    //设为不透明
+    eaglLayer.opaque = YES;
+    
+    //设置描绘属性
+    eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking,
+                                    kEAGLColorFormatRGB565, kEAGLDrawablePropertyColorFormat,
+                                    //[NSNumber numberWithBool:YES], kEAGLDrawablePropertyRetainedBacking,
+                                    nil];
+    
+    //设置分辨率
+    self.contentScaleFactor = [UIScreen mainScreen].scale;
+    _viewScale = [UIScreen mainScreen].scale;
+    
+    //创建上下文
+    _glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    
+    //[self debugGlError];
+    
+    //上下文创建失败则直接返回no
+    if(!_glContext || ![EAGLContext setCurrentContext:_glContext])
+    {
+        return NO;
+    }
+    
+    //创建纹理
+    [self setupYUVTexture];
+    
+    //加载着色器
+    [self loadShader];
+    
+    //使用着色器
+    glUseProgram(_program);
+    
+    //获取一致变量的存储位置
+    GLuint textureUniformY = glGetUniformLocation(_program, "SamplerY");
+    GLuint textureUniformU = glGetUniformLocation(_program, "SamplerU");
+    GLuint textureUniformV = glGetUniformLocation(_program, "SamplerV");
+    
+    //对几个纹理采样器变量进行设置
+    glUniform1i(textureUniformY, 0);
+    glUniform1i(textureUniformU, 1);
+    glUniform1i(textureUniformV, 2);
+    
+    return YES;
+}
+
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        
+        //没有初始化成功
+        if (![self doInit]) {
+            
+            self = nil;
+        }
+    }
+    
+    return self;
+}
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+        //没有初始化成功
+        if (![self doInit]) {
+            
+            self = nil;
+        }
+    }
+    
+    return self;
+}
+
+-(void)layoutSubviews{
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        //互斥锁
+        @synchronized (self) {
+            
+            [EAGLContext setCurrentContext:_glContext];
+            
+            //清除缓冲区
+            [self destoryFrameAndRenderBuffer];
+            
+            //创建缓冲区
+            [self createFrameAndRenderBuffer];
+            
+        }
+        
+        //把数据显示在这个视窗上
+        glViewport(1, 1, self.bounds.size.width*_viewScale - 2, self.bounds.size.height*_viewScale - 2);
+    });
+}
+
+#pragma mark -  设置opengl
+
+
+
+/**
+ 创建缓冲区
+
+ @return <#return value description#>
+ */
+- (BOOL)createFrameAndRenderBuffer
+{
+    //创建帧缓冲绑定
+    glGenFramebuffers(1, &_framebuffer);
+    glGenRenderbuffers(1, &_renderBuffer);
+    
+    glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
+    glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
+    
+    
+    if (![_glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer *)self.layer])
+    {
+        NSLog(@"attach渲染缓冲区失败");
+    }
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _renderBuffer);
+    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+    {
+        NSLog(@"创建缓冲区错误 0x%x", glCheckFramebufferStatus(GL_FRAMEBUFFER));
+        return NO;
+    }
+    return YES;
+}
+
+/**
+ 清除缓冲区
+ */
+- (void)destoryFrameAndRenderBuffer
+{
+    if (_framebuffer)
+    {
+        glDeleteFramebuffers(1, &_framebuffer);
+    }
+    
+    if (_renderBuffer)
+    {
+        glDeleteRenderbuffers(1, &_renderBuffer);
+    }
+    
+    _framebuffer = 0;
+    _renderBuffer = 0;
+}
+/**
+ 创建纹理
+ */
+- (void)setupYUVTexture{
+    
+}
+
+/**
+ 加载着色器
+ */
+- (void)loadShader{
+    
+}
+
 #pragma mark -  接口
+
+        
 
 /**
  设置大小
