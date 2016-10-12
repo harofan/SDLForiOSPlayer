@@ -36,6 +36,12 @@ enum TextureType
     eaglLayer.opaque = YES;
     
     //设置描绘属性
+//    [eaglLayer setDrawableProperties:[NSDictionary dictionaryWithObjectsAndKeys:
+//                                     [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking,
+//                                     kEAGLColorFormatRGB565, kEAGLDrawablePropertyColorFormat,
+//                                     //[NSNumber numberWithBool:YES], kEAGLDrawablePropertyRetainedBacking,
+//                                      nil]];
+    
     eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
                                     [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking,
                                     kEAGLColorFormatRGB565, kEAGLDrawablePropertyColorFormat,
@@ -62,6 +68,9 @@ enum TextureType
     
     //加载着色器
     [self loadShader];
+    
+    //像素数据对齐
+//    glPixelStorei(GL_UNPACK_ALIGNMENT, 2);
     
     //使用着色器
     glUseProgram(_program);
@@ -136,7 +145,15 @@ enum TextureType
 
 #pragma mark -  设置opengl
 
+/**
+ 不写的话,设置描绘属性会崩溃
 
+ @return <#return value description#>
+ */
++ (Class)layerClass
+{
+    return [CAEAGLLayer class];
+}
 
 /**
  创建缓冲区
@@ -317,7 +334,7 @@ TexCoordOut = TexCoordIn;\
     if (vertexShader)
         /*
          释放内存不能立刻删除
-         If a shader object to be deleted is attached to a program object, it will be flagged for deletion, but it will not be deleted until it is no longer attached to any program object…
+         If a shader object to be deleted is attached to a program object, it will be flagged for deletion, but it will not be deleted until it is no longer attached to any program object… 
           shader 删除该着色器对象（如果一个着色器对象在删除前已经链接到程序对象中，那么当执行glDeleteShader函数时不会立即被删除，而是该着色器对象将被标记为删除，器内存被释放一次，它不再链接到其他任何程序对象）
          */
         glDeleteShader(vertexShader);
@@ -326,7 +343,7 @@ TexCoordOut = TexCoordIn;\
 }
 
 /**
- 编译着色代码
+ 编译着色代码,使用着色器
 
  @param shaderString 代码
  @param shaderType   类型
@@ -349,19 +366,19 @@ TexCoordOut = TexCoordIn;\
     }
     
     /**
-     2
+     2 分别创建一个顶点着色器对象和一个片段着色器对象
      */
     GLuint shaderHandle = glCreateShader(shaderType);
     
     /**
-     3
+     3 分别将顶点着色程序的源代码字符数组绑定到顶点着色器对象，将片段着色程序的源代码字符数组绑定到片段着色器对象
      */
     const char * shaderStringUTF8 = [shaderString UTF8String];
     int shaderStringLength = [shaderString length];
     glShaderSource(shaderHandle, 1, &shaderStringUTF8, &shaderStringLength);
     
     /**
-     4
+     4 分别编译顶点着色器对象和片段着色器对象
      */
     glCompileShader(shaderHandle);
     
@@ -369,6 +386,8 @@ TexCoordOut = TexCoordIn;\
      5
      */
     GLint compileSuccess;
+    
+    //获取编译情况
     glGetShaderiv(shaderHandle, GL_COMPILE_STATUS, &compileSuccess);
     if (compileSuccess == GL_FALSE) {
         GLchar messages[256];

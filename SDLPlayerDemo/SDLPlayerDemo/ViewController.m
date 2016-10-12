@@ -20,6 +20,10 @@
 
 #import "OpenglView.h"
 
+#import "OpenGLView20.h"
+
+#import "KxMovieViewController.h"
+
 
 #define screenSize [UIScreen mainScreen].bounds.size
 @interface ViewController ()
@@ -46,26 +50,66 @@
 //    [self.view addSubview:view_glk];
 //    [self.view.layer addSublayer:view_glk.layer];
     
-    OpenglView * openglView = [[OpenglView alloc]initWithFrame:CGRectMake(0, 100, screenSize.width, 200)];
+    OpenglView * openglview20 = [[OpenglView alloc]initWithFrame:CGRectMake(0, 100, 420, 700)];
     
-    openglView.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:openglview20];
     
-    [self.view addSubview:openglView];
-    
-    [openglView setVideoSize:screenSize.width height:200];
+    [openglview20 setVideoSize:420 height:700];
     
     NSString * path = [[NSBundle mainBundle]pathForResource:@"image_420_700.yuv" ofType:nil];
     
     NSData * data = [NSData dataWithContentsOfFile:path];
     
-    UInt32 * pFream = (UInt32*)[data bytes];
+    UInt8 * pFrameRGB = (UInt8*)[data bytes];
     
-    [openglView displayYUV420pData:pFream width:screenSize.width height:200];
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    
+                sleep(1);
+    
+                [openglview20 displayYUV420pData:pFrameRGB width:420 height:700];
+    
+                //                    [self.openglView setNeedsDisplay];
+    
+                
+            });
+//    float result =data.length/300.0f;
+//    
+//    for (int page = 0 ; page<3000; page ++) {
+//        
+//        NSRange rang=NSMakeRange(page*result+1, page*result+result+1);
+//        
+//        if (rang.location>=data.length||rang.location+rang.length>=data.length) {
+//            return;
+//        }
+//        NSData * dataNew=[data subdataWithRange:rang];
+//        UInt32 * pFrameRGB = (UInt8*)[dataNew bytes];
+//        
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            
+//            sleep(1);
+//            
+//            [openglview20 displayYUV420pData:pFrameRGB width:210 height:350];
+//            
+//            //                    [self.openglView setNeedsDisplay];
+//            
+//            
+//        });
+//    }
+    
+//    UInt32 * pFream = (UInt32*)[data bytes];
     
     
-    self.openglView = openglView;
+    
+    
     
     //解码
+//    [self decode];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
 //    [self decode];
 }
 -(void)test{
@@ -234,7 +278,16 @@
                 //linesize对视频来说是一行像素的大小
                 sws_scale(img_convert_ctx, (const uint8_t * const *)pFream->data, pFream->linesize, 0, pCodecCtx->height, pFreamYUV->data, pFreamYUV->linesize);
                 
-//                [self.openglView displayYUV420pData:pFreamYUV->data width:screenSize.width height:200];
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    
+                    sleep(1);
+                    
+                    [self.openglView displayYUV420pData:pFreamYUV->data width:screenSize.width height:200];
+                    
+//                    [self.openglView setNeedsDisplay];
+                    
+
+                });
                 
                 NSLog(@"解码序号%d",frame_cnt);
                 
