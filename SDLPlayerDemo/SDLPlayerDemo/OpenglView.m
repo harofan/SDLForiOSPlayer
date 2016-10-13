@@ -494,6 +494,14 @@ TexCoordOut = TexCoordIn;\
  */
 -(void)clearFrame{
     
+    if ([self window])
+    {
+        [EAGLContext setCurrentContext:_glContext];
+        glClearColor(0.0, 0.0, 0.0, 1.0);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
+        [_glContext presentRenderbuffer:GL_RENDERBUFFER];
+    }
 }
 
 

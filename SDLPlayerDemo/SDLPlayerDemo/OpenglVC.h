@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  OpenglVC.h
 //  SDLPlayerDemo
 //
-//  Created by fy on 2016/9/27.
+//  Created by fy on 2016/10/13.
 //  Copyright © 2016年 LY. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface OpenglVC : UIViewController
 
 @end
-

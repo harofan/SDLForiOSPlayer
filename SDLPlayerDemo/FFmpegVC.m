@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  FFmpegVC.m
 //  SDLPlayerDemo
 //
-//  Created by fy on 2016/9/27.
+//  Created by fy on 2016/10/13.
 //  Copyright © 2016年 LY. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FFmpegVC.h"
 
 #import "avformat.h"
 
@@ -14,95 +14,30 @@
 
 #import "swscale.h"
 
-#import <OpenGLES/ES3/gl.h>
-
-#import <GLKit/GLKit.h>
-
-#import "OpenglView.h"
-
-#import "OpenGLView20.h"
-
-#import "KxMovieViewController.h"
-
-//#define filePath @"jpgimage1_image_640_480.yuv"
-
-#define filePathName @"jpgimage1_video_640_480.yuv"
-
-#define screenSize [UIScreen mainScreen].bounds.size
-
-#define videoW 488
-
-#define videoH 512
-@interface ViewController ()
-
-@property(nonatomic,strong)OpenglView * openglView;
+@interface FFmpegVC ()
 
 @end
 
-@implementation ViewController
+@implementation FFmpegVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
     
-
-
+    self.view.backgroundColor = [ UIColor whiteColor];
     
-    
-    //解码
     [self decode];
+    
 }
 
--(void)viewDidAppear:(BOOL)animated{
+-(void)dealloc{
     
-    [super viewDidAppear:animated];
-    
-//    [self decode];
-}
--(void)test{
-    
-    OpenglView * openglview = [[OpenglView alloc]initWithFrame:CGRectMake(0, 100, 640, 480)];
-    
-    [self.view addSubview:openglview];
-    
-    [openglview setVideoSize:videoW height:videoH];
-    
-    self.openglView = openglview;
-    
-    //   NSString * path = [[NSBundle mainBundle]pathForResource:filePathName
-    //                                                    ofType:nil];
-    //
-    //    NSData * data = [NSData dataWithContentsOfFile:path];
-    //
-    //    float result =data.length/9.75f;
-    //
-    //    for (int page = 0 ; page<10; page ++) {
-    //
-    //        NSRange rang=NSMakeRange(page*result+1, page*result+result+1);
-    //
-    //        if (rang.location>=data.length||rang.location+rang.length>=data.length) {
-    //            return;
-    //        }
-    //        NSData * dataNew=[data subdataWithRange:rang];
-    //        UInt32 * pFrameRGB = (UInt32*)[dataNew bytes];
-    //
-    //        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-    //
-    //            sleep(1);
-    //
-    //            [openglview displayYUV420pData:pFrameRGB width:640 height:480];
-    //
-    //        });
-    //
-    //        if (page == 4) {
-    //            break;
-    //        }
-    //    }
-    //    
-    //
-    //    NSLog(@"结束");
+    NSLog(@"销毁");
 }
 
+/**
+ 解码
+ */
 -(void)decode{
     
     //初始化所有组件
@@ -264,14 +199,14 @@
                 //linesize对视频来说是一行像素的大小
                 sws_scale(img_convert_ctx, (const uint8_t * const *)pFream->data, pFream->linesize, 0, pCodecCtx->height, pFreamYUV->data, pFreamYUV->linesize);
                 
-                dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                    
-                    sleep(1);
-                    
-                    [self.openglView displayYUV420pData:pFreamYUV width:videoW height:videoH];
-
-                });
-
+//                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//                    
+//                    sleep(1);
+//                    
+//                    [self.openglView displayYUV420pData:pFreamYUV width:videoW height:videoH];
+//                    
+//                });
+                
                 
                 NSLog(@"解码序号%d",frame_cnt);
                 

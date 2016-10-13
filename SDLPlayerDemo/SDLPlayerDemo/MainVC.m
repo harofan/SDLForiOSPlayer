@@ -9,8 +9,10 @@
 #import "MainVC.h"
 
 #import <Masonry/Masonry.h>
-//
-//#import "Masonry.h"
+
+#import "FFmpegVC.h"
+
+#import "OpenglVC.h"
 
 @interface MainVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -69,7 +71,7 @@
             cell.textLabel.text = @"ffmpeg解码";
             break;
         case 1:
-            cell.textLabel.text = @"视频录制";
+            cell.textLabel.text = @"opengl渲染yuv数据";
             break;
             
         case 2:
@@ -92,22 +94,22 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     switch (indexPath.row) {
-//        case 0:
-//        {
-//            AudioRecordVC * vc = [[AudioRecordVC alloc]init];
-//            
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
+        case 0:
+        {
+            FFmpegVC * vc = [[FFmpegVC alloc]init];
             
-//        case 1:
-//        {
-//            VideoRecordVC * vc = [[VideoRecordVC alloc]init];
-//            
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
-//            
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        case 1:
+        {
+            OpenglVC * vc = [[OpenglVC alloc]init];
+            
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+//
 //        case 2:
 //        {
 //            LiveVC * vc = [[LiveVC alloc]init];
