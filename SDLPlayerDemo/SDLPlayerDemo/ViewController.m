@@ -24,8 +24,15 @@
 
 #import "KxMovieViewController.h"
 
+//#define filePath @"jpgimage1_image_640_480.yuv"
+
+#define filePathName @"jpgimage1_video_640_480.yuv"
 
 #define screenSize [UIScreen mainScreen].bounds.size
+
+#define videoW 488
+
+#define videoH 512
 @interface ViewController ()
 
 @property(nonatomic,strong)OpenglView * openglView;
@@ -38,72 +45,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    //打印ffmpeg配置信息
-    //NSLog(@"打印配置信息==================%s",avcodec_configuration());
-    
-//    GLKView * view_glk = [[GLKView alloc]init];
-//    
-//    view_glk.backgroundColor = [UIColor blackColor];
-//    
-//    view_glk.frame = CGRectMake(0, 100, screenSize.width, 200);
-//    
-//    [self.view addSubview:view_glk];
-//    [self.view.layer addSublayer:view_glk.layer];
-    
-    OpenglView * openglview20 = [[OpenglView alloc]initWithFrame:CGRectMake(0, 100, 420, 700)];
-    
-    [self.view addSubview:openglview20];
-    
-    [openglview20 setVideoSize:420 height:700];
-    
-    NSString * path = [[NSBundle mainBundle]pathForResource:@"image_420_700.yuv" ofType:nil];
-    
-    NSData * data = [NSData dataWithContentsOfFile:path];
-    
-    UInt8 * pFrameRGB = (UInt8*)[data bytes];
-    
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-    
-                sleep(1);
-    
-                [openglview20 displayYUV420pData:pFrameRGB width:420 height:700];
-    
-                //                    [self.openglView setNeedsDisplay];
-    
-                
-            });
-//    float result =data.length/300.0f;
-//    
-//    for (int page = 0 ; page<3000; page ++) {
-//        
-//        NSRange rang=NSMakeRange(page*result+1, page*result+result+1);
-//        
-//        if (rang.location>=data.length||rang.location+rang.length>=data.length) {
-//            return;
-//        }
-//        NSData * dataNew=[data subdataWithRange:rang];
-//        UInt32 * pFrameRGB = (UInt8*)[dataNew bytes];
-//        
-//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//            
-//            sleep(1);
-//            
-//            [openglview20 displayYUV420pData:pFrameRGB width:210 height:350];
-//            
-//            //                    [self.openglView setNeedsDisplay];
-//            
-//            
-//        });
-//    }
-    
-//    UInt32 * pFream = (UInt32*)[data bytes];
-    
-    
-    
+
+
     
     
     //解码
-//    [self decode];
+    [self decode];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -114,7 +61,46 @@
 }
 -(void)test{
     
+    OpenglView * openglview = [[OpenglView alloc]initWithFrame:CGRectMake(0, 100, 640, 480)];
     
+    [self.view addSubview:openglview];
+    
+    [openglview setVideoSize:videoW height:videoH];
+    
+    self.openglView = openglview;
+    
+    //   NSString * path = [[NSBundle mainBundle]pathForResource:filePathName
+    //                                                    ofType:nil];
+    //
+    //    NSData * data = [NSData dataWithContentsOfFile:path];
+    //
+    //    float result =data.length/9.75f;
+    //
+    //    for (int page = 0 ; page<10; page ++) {
+    //
+    //        NSRange rang=NSMakeRange(page*result+1, page*result+result+1);
+    //
+    //        if (rang.location>=data.length||rang.location+rang.length>=data.length) {
+    //            return;
+    //        }
+    //        NSData * dataNew=[data subdataWithRange:rang];
+    //        UInt32 * pFrameRGB = (UInt32*)[dataNew bytes];
+    //
+    //        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    //
+    //            sleep(1);
+    //
+    //            [openglview displayYUV420pData:pFrameRGB width:640 height:480];
+    //
+    //        });
+    //
+    //        if (page == 4) {
+    //            break;
+    //        }
+    //    }
+    //    
+    //
+    //    NSLog(@"结束");
 }
 
 -(void)decode{
@@ -129,7 +115,7 @@
     pFormatCtx = avformat_alloc_context();
     
     //获取文件路径
-    NSString * filePath = [[NSBundle mainBundle]pathForResource:@"ds.mov" ofType:nil];
+    NSString * filePath = [[NSBundle mainBundle]pathForResource:@"cuc_ieschool.mp4" ofType:nil];
     
     const char * path = [filePath UTF8String];
     
@@ -282,18 +268,18 @@
                     
                     sleep(1);
                     
-                    [self.openglView displayYUV420pData:pFreamYUV->data width:screenSize.width height:200];
-                    
-//                    [self.openglView setNeedsDisplay];
-                    
+                    [self.openglView displayYUV420pData:pFreamYUV width:videoW height:videoH];
 
                 });
+
                 
                 NSLog(@"解码序号%d",frame_cnt);
                 
                 frame_cnt ++;
             }
         }
+        
+        
         
         //销毁packet
         av_free_packet(packet);

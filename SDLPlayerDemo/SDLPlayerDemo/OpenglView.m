@@ -69,8 +69,8 @@ enum TextureType
     //加载着色器
     [self loadShader];
     
-    //像素数据对齐
-//    glPixelStorei(GL_UNPACK_ALIGNMENT, 2);
+    //像素数据对齐,第二个参数默认为4,一般为1或4
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
     
     //使用着色器
     glUseProgram(_program);

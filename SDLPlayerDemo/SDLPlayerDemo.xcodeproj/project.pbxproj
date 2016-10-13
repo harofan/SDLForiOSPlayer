@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0608C0131DADDCC3004FAA77 /* cuc_ieschool.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0608C0121DADDCC3004FAA77 /* cuc_ieschool.mp4 */; };
+		0608C0161DAE0AC6004FAA77 /* jpgimage1_image_640_480.yuv in Resources */ = {isa = PBXBuildFile; fileRef = 0608C0141DAE0AC6004FAA77 /* jpgimage1_image_640_480.yuv */; };
+		0608C0171DAE0AC6004FAA77 /* jpgimage1_video_640_480.yuv in Resources */ = {isa = PBXBuildFile; fileRef = 0608C0151DAE0AC6004FAA77 /* jpgimage1_video_640_480.yuv */; };
 		060DD8021DA8EA3400338F88 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060DD8011DA8EA3400338F88 /* GLKit.framework */; };
 		061003BF1D9A4B03006230A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 061003BE1D9A4B03006230A9 /* main.m */; };
 		061003C21D9A4B03006230A9 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 061003C11D9A4B03006230A9 /* AppDelegate.mm */; };
@@ -40,9 +43,14 @@
 		066DB69D1DACBF1300C9C514 /* KxMovieGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 066DB6971DACBF1300C9C514 /* KxMovieGLView.m */; };
 		066DB69E1DACBF1300C9C514 /* KxMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 066DB6991DACBF1300C9C514 /* KxMovieViewController.m */; };
 		06BCE4CD1D9BC12E000AEF90 /* ds.mov in Resources */ = {isa = PBXBuildFile; fileRef = 06BCE4CC1D9BC12E000AEF90 /* ds.mov */; };
+		06F9A77E1DAF317100089630 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F9A77D1DAF317100089630 /* MainVC.m */; };
+		9DD7F657448BFE5D24AC8E32 /* libPods-SDLPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2738915A6120D0D0CAF20DD5 /* libPods-SDLPlayerDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0608C0121DADDCC3004FAA77 /* cuc_ieschool.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cuc_ieschool.mp4; sourceTree = "<group>"; };
+		0608C0141DAE0AC6004FAA77 /* jpgimage1_image_640_480.yuv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jpgimage1_image_640_480.yuv; sourceTree = "<group>"; };
+		0608C0151DAE0AC6004FAA77 /* jpgimage1_video_640_480.yuv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jpgimage1_video_640_480.yuv; sourceTree = "<group>"; };
 		060DD8011DA8EA3400338F88 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		061003BA1D9A4B03006230A9 /* SDLPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		061003BE1D9A4B03006230A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -195,6 +203,11 @@
 		066DB6981DACBF1300C9C514 /* KxMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieViewController.h; sourceTree = "<group>"; };
 		066DB6991DACBF1300C9C514 /* KxMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieViewController.m; sourceTree = "<group>"; };
 		06BCE4CC1D9BC12E000AEF90 /* ds.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ds.mov; sourceTree = "<group>"; };
+		06F9A77C1DAF317100089630 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		06F9A77D1DAF317100089630 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		2738915A6120D0D0CAF20DD5 /* libPods-SDLPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDLPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		328CE7B2AB796BD4D64FBD64 /* Pods-SDLPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDLPlayerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDLPlayerDemo/Pods-SDLPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		9DD41A8318DED8F7364D7564 /* Pods-SDLPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDLPlayerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDLPlayerDemo/Pods-SDLPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +233,7 @@
 				0610044C1D9A4CD5006230A9 /* libavcodec.a in Frameworks */,
 				061004511D9A4CD5006230A9 /* libswresample.a in Frameworks */,
 				0610044F1D9A4CD5006230A9 /* libavformat.a in Frameworks */,
+				9DD7F657448BFE5D24AC8E32 /* libPods-SDLPlayerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +250,7 @@
 				061003BC1D9A4B03006230A9 /* SDLPlayerDemo */,
 				061003BB1D9A4B03006230A9 /* Products */,
 				061004531D9A523F006230A9 /* Frameworks */,
+				611DB4793C4950E27F7C59C1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,8 +265,11 @@
 		061003BC1D9A4B03006230A9 /* SDLPlayerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				062DDE281DAF7DED00F8C07B /* FFmpegVC */,
 				061003C01D9A4B03006230A9 /* AppDelegate.h */,
 				061003C11D9A4B03006230A9 /* AppDelegate.mm */,
+				06F9A77C1DAF317100089630 /* MainVC.h */,
+				06F9A77D1DAF317100089630 /* MainVC.m */,
 				061003C31D9A4B03006230A9 /* ViewController.h */,
 				061003C41D9A4B03006230A9 /* ViewController.m */,
 				061003C61D9A4B03006230A9 /* Main.storyboard */,
@@ -268,6 +286,9 @@
 		061003BD1D9A4B03006230A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0608C0141DAE0AC6004FAA77 /* jpgimage1_image_640_480.yuv */,
+				0608C0151DAE0AC6004FAA77 /* jpgimage1_video_640_480.yuv */,
+				0608C0121DADDCC3004FAA77 /* cuc_ieschool.mp4 */,
 				065B276A1DAB3BAB00F4FDB7 /* image_420_700.yuv */,
 				06BCE4CC1D9BC12E000AEF90 /* ds.mov */,
 				061003BE1D9A4B03006230A9 /* main.m */,
@@ -482,8 +503,17 @@
 				061004581D9A5256006230A9 /* libiconv.tbd */,
 				061004561D9A524C006230A9 /* libbz2.tbd */,
 				061004541D9A5240006230A9 /* libz.tbd */,
+				2738915A6120D0D0CAF20DD5 /* libPods-SDLPlayerDemo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		062DDE281DAF7DED00F8C07B /* FFmpegVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FFmpegVC;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		066DB68E1DACBF1300C9C514 /* kxmovie */ = {
@@ -504,6 +534,15 @@
 			path = kxmovie;
 			sourceTree = "<group>";
 		};
+		611DB4793C4950E27F7C59C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DD41A8318DED8F7364D7564 /* Pods-SDLPlayerDemo.debug.xcconfig */,
+				328CE7B2AB796BD4D64FBD64 /* Pods-SDLPlayerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -511,9 +550,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 061003D11D9A4B03006230A9 /* Build configuration list for PBXNativeTarget "SDLPlayerDemo" */;
 			buildPhases = (
+				D5F08E6A06A1B6DF7F100999 /* [CP] Check Pods Manifest.lock */,
 				061003B61D9A4B03006230A9 /* Sources */,
 				061003B71D9A4B03006230A9 /* Frameworks */,
 				061003B81D9A4B03006230A9 /* Resources */,
+				7E50D2B4F05636C1DE750A5D /* [CP] Embed Pods Frameworks */,
+				7AA3B2FB19E0626D8E709CA4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -563,16 +605,67 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0608C0161DAE0AC6004FAA77 /* jpgimage1_image_640_480.yuv in Resources */,
 				061003CD1D9A4B03006230A9 /* LaunchScreen.storyboard in Resources */,
 				065B276B1DAB3BAB00F4FDB7 /* image_420_700.yuv in Resources */,
 				06BCE4CD1D9BC12E000AEF90 /* ds.mov in Resources */,
+				0608C0131DADDCC3004FAA77 /* cuc_ieschool.mp4 in Resources */,
 				066DB69B1DACBF1300C9C514 /* kxmovie.bundle in Resources */,
 				061003CA1D9A4B03006230A9 /* Assets.xcassets in Resources */,
 				061003C81D9A4B03006230A9 /* Main.storyboard in Resources */,
+				0608C0171DAE0AC6004FAA77 /* jpgimage1_video_640_480.yuv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7AA3B2FB19E0626D8E709CA4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDLPlayerDemo/Pods-SDLPlayerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E50D2B4F05636C1DE750A5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDLPlayerDemo/Pods-SDLPlayerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5F08E6A06A1B6DF7F100999 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		061003B61D9A4B03006230A9 /* Sources */ = {
@@ -582,6 +675,7 @@
 				066DB69E1DACBF1300C9C514 /* KxMovieViewController.m in Sources */,
 				061003C51D9A4B03006230A9 /* ViewController.m in Sources */,
 				065B27631DA9E16400F4FDB7 /* OpenglView.m in Sources */,
+				06F9A77E1DAF317100089630 /* MainVC.m in Sources */,
 				061003C21D9A4B03006230A9 /* AppDelegate.mm in Sources */,
 				066DB69D1DACBF1300C9C514 /* KxMovieGLView.m in Sources */,
 				066DB69A1DACBF1300C9C514 /* KxAudioManager.m in Sources */,
@@ -656,6 +750,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-Objc",
+					"-l\"Masonry\"",
+				);
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -697,6 +797,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-Objc",
+					"-l\"Masonry\"",
+				);
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -705,6 +811,7 @@
 		};
 		061003D21D9A4B03006230A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DD41A8318DED8F7364D7564 /* Pods-SDLPlayerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PD5DSFUB55;
@@ -714,7 +821,7 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg-iOS/include",
-					"$(PROJECT_DIR)/SDL2.framework",
+					"$(PODS_ROOT)/**",
 				);
 				INFOPLIST_FILE = SDLPlayerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -728,7 +835,10 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"$(inherited)",
+					"-l\"Masonry\"",
 				);
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = LY.SDLPlayerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -736,6 +846,7 @@
 		};
 		061003D31D9A4B03006230A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 328CE7B2AB796BD4D64FBD64 /* Pods-SDLPlayerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PD5DSFUB55;
@@ -745,7 +856,7 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FFmpeg-iOS/include",
-					"$(PROJECT_DIR)/SDL2.framework",
+					"$(PODS_ROOT)/**",
 				);
 				INFOPLIST_FILE = SDLPlayerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -759,7 +870,10 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"$(inherited)",
+					"-l\"Masonry\"",
 				);
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = LY.SDLPlayerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
