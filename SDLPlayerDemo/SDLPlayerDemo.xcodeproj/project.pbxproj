@@ -35,6 +35,7 @@
 		061004D31D9A5F23006230A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061004D21D9A5F23006230A9 /* AVFoundation.framework */; };
 		062DDE2B1DAF808500F8C07B /* FFmpegVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 062DDE2A1DAF808500F8C07B /* FFmpegVC.m */; };
 		062DDE2F1DAF822400F8C07B /* OpenglVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 062DDE2E1DAF822400F8C07B /* OpenglVC.m */; };
+		062DDE331DAFB6E800F8C07B /* LXHOpenGLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 062DDE321DAFB6E800F8C07B /* LXHOpenGLVC.m */; };
 		065B27631DA9E16400F4FDB7 /* OpenglView.m in Sources */ = {isa = PBXBuildFile; fileRef = 065B27621DA9E16400F4FDB7 /* OpenglView.m */; };
 		065B276B1DAB3BAB00F4FDB7 /* image_420_700.yuv in Resources */ = {isa = PBXBuildFile; fileRef = 065B276A1DAB3BAB00F4FDB7 /* image_420_700.yuv */; };
 		066DB69A1DACBF1300C9C514 /* KxAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 066DB6901DACBF1300C9C514 /* KxAudioManager.m */; };
@@ -188,6 +189,8 @@
 		062DDE2A1DAF808500F8C07B /* FFmpegVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFmpegVC.m; sourceTree = "<group>"; };
 		062DDE2D1DAF822400F8C07B /* OpenglVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglVC.h; sourceTree = "<group>"; };
 		062DDE2E1DAF822400F8C07B /* OpenglVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglVC.m; sourceTree = "<group>"; };
+		062DDE311DAFB6E800F8C07B /* LXHOpenGLVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHOpenGLVC.h; sourceTree = "<group>"; };
+		062DDE321DAFB6E800F8C07B /* LXHOpenGLVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHOpenGLVC.m; sourceTree = "<group>"; };
 		065B27611DA9E16400F4FDB7 /* OpenglView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglView.h; sourceTree = "<group>"; };
 		065B27621DA9E16400F4FDB7 /* OpenglView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglView.m; sourceTree = "<group>"; };
 		065B276A1DAB3BAB00F4FDB7 /* image_420_700.yuv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = image_420_700.yuv; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		061003BC1D9A4B03006230A9 /* SDLPlayerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				062DDE301DAFB3E400F8C07B /* LXHOpenGLVC */,
 				062DDE2C1DAF81F600F8C07B /* OpenglVC */,
 				062DDE281DAF7DED00F8C07B /* FFmpegVC */,
 				061003C01D9A4B03006230A9 /* AppDelegate.h */,
@@ -524,6 +528,15 @@
 			name = OpenglVC;
 			sourceTree = "<group>";
 		};
+		062DDE301DAFB3E400F8C07B /* LXHOpenGLVC */ = {
+			isa = PBXGroup;
+			children = (
+				062DDE311DAFB6E800F8C07B /* LXHOpenGLVC.h */,
+				062DDE321DAFB6E800F8C07B /* LXHOpenGLVC.m */,
+			);
+			name = LXHOpenGLVC;
+			sourceTree = "<group>";
+		};
 		066DB68E1DACBF1300C9C514 /* kxmovie */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +701,7 @@
 				066DB69A1DACBF1300C9C514 /* KxAudioManager.m in Sources */,
 				062DDE2F1DAF822400F8C07B /* OpenglVC.m in Sources */,
 				062DDE2B1DAF808500F8C07B /* FFmpegVC.m in Sources */,
+				062DDE331DAFB6E800F8C07B /* LXHOpenGLVC.m in Sources */,
 				061003BF1D9A4B03006230A9 /* main.m in Sources */,
 				066DB69C1DACBF1300C9C514 /* KxMovieDecoder.m in Sources */,
 			);

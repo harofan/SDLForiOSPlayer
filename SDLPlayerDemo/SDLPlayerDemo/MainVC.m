@@ -14,6 +14,8 @@
 
 #import "OpenglVC.h"
 
+#import "LXHOpenGLVC.h"
+
 @interface MainVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -71,11 +73,11 @@
             cell.textLabel.text = @"ffmpeg解码";
             break;
         case 1:
-            cell.textLabel.text = @"opengl渲染yuv数据";
+            cell.textLabel.text = @"别人的opengl渲染yuv数据";
             break;
             
         case 2:
-            cell.textLabel.text = @"直播采集";
+            cell.textLabel.text = @"雷博教程写的OpenGL渲染";
             break;
             
         case 3:
@@ -109,15 +111,15 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
+
+        case 2:
+        {
+            LXHOpenGLVC * vc = [[LXHOpenGLVC alloc]init];
+            
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
 //
-//        case 2:
-//        {
-//            LiveVC * vc = [[LiveVC alloc]init];
-//            
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
-//            
 //        case 3:
 //        {
 //            IJKPlayerVC * vc = [[IJKPlayerVC alloc]init];
