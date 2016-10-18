@@ -8,13 +8,13 @@
 
 #import "MainVC.h"
 
-#import <Masonry/Masonry.h>
-
 #import "FFmpegVC.h"
 
 #import "OpenglVC.h"
 
-#import "LXHOpenGLVC.h"
+#import "LXHSDLPlayerVC.h"
+
+#define screenSize [UIScreen mainScreen].bounds.size
 
 @interface MainVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -40,11 +40,8 @@
     
     [self.view addSubview:tableView];
     
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.edges.equalTo(@0);
-        
-    }];
+    tableView.frame = CGRectMake(0, 0, screenSize.width, 300);
+    
     
     tableView.dataSource = self;
     
@@ -114,7 +111,7 @@
 
         case 2:
         {
-            LXHOpenGLVC * vc = [[LXHOpenGLVC alloc]init];
+            LXHSDLPlayerVC * vc = [[LXHSDLPlayerVC alloc]init];
             
             [self.navigationController pushViewController:vc animated:YES];
         }
