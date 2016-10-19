@@ -12,7 +12,7 @@
 		0608C0171DAE0AC6004FAA77 /* jpgimage1_video_640_480.yuv in Resources */ = {isa = PBXBuildFile; fileRef = 0608C0151DAE0AC6004FAA77 /* jpgimage1_video_640_480.yuv */; };
 		060DD8021DA8EA3400338F88 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060DD8011DA8EA3400338F88 /* GLKit.framework */; };
 		061003BF1D9A4B03006230A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 061003BE1D9A4B03006230A9 /* main.m */; };
-		061003C21D9A4B03006230A9 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 061003C11D9A4B03006230A9 /* AppDelegate.mm */; };
+		061003C21D9A4B03006230A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 061003C11D9A4B03006230A9 /* AppDelegate.m */; };
 		061003C81D9A4B03006230A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061003C61D9A4B03006230A9 /* Main.storyboard */; };
 		061003CA1D9A4B03006230A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 061003C91D9A4B03006230A9 /* Assets.xcassets */; };
 		061003CD1D9A4B03006230A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061003CB1D9A4B03006230A9 /* LaunchScreen.storyboard */; };
@@ -43,7 +43,7 @@
 		066DB69D1DACBF1300C9C514 /* KxMovieGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 066DB6971DACBF1300C9C514 /* KxMovieGLView.m */; };
 		066DB69E1DACBF1300C9C514 /* KxMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 066DB6991DACBF1300C9C514 /* KxMovieViewController.m */; };
 		067ED0E31DB50776008E1392 /* LXHSDLPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 067ED0E21DB50776008E1392 /* LXHSDLPlayerVC.m */; };
-		067ED0E51DB507EC008E1392 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067ED0E41DB507EC008E1392 /* SDL2.framework */; };
+		067EDCEA1DB6008A008E1392 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDCE91DB6008A008E1392 /* SDL2.framework */; };
 		06BCE4CD1D9BC12E000AEF90 /* ds.mov in Resources */ = {isa = PBXBuildFile; fileRef = 06BCE4CC1D9BC12E000AEF90 /* ds.mov */; };
 		06F9A77E1DAF317100089630 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F9A77D1DAF317100089630 /* MainVC.m */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,7 @@
 		061003BA1D9A4B03006230A9 /* SDLPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		061003BE1D9A4B03006230A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		061003C01D9A4B03006230A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		061003C11D9A4B03006230A9 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		061003C11D9A4B03006230A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		061003C71D9A4B03006230A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		061003C91D9A4B03006230A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		061003CC1D9A4B03006230A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		066DB6991DACBF1300C9C514 /* KxMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieViewController.m; sourceTree = "<group>"; };
 		067ED0E11DB50776008E1392 /* LXHSDLPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHSDLPlayerVC.h; sourceTree = "<group>"; };
 		067ED0E21DB50776008E1392 /* LXHSDLPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHSDLPlayerVC.m; sourceTree = "<group>"; };
-		067ED0E41DB507EC008E1392 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
+		067EDCE91DB6008A008E1392 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		06BCE4CC1D9BC12E000AEF90 /* ds.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ds.mov; sourceTree = "<group>"; };
 		06F9A77C1DAF317100089630 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		06F9A77D1DAF317100089630 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
@@ -223,6 +223,7 @@
 				061004CE1D9A5DBE006230A9 /* QuartzCore.framework in Frameworks */,
 				061004CC1D9A5DB5006230A9 /* CoreGraphics.framework in Frameworks */,
 				0610045F1D9A543E006230A9 /* CoreMedia.framework in Frameworks */,
+				067EDCEA1DB6008A008E1392 /* SDL2.framework in Frameworks */,
 				0610045B1D9A5269006230A9 /* VideoToolbox.framework in Frameworks */,
 				061004591D9A5256006230A9 /* libiconv.tbd in Frameworks */,
 				061004571D9A524C006230A9 /* libbz2.tbd in Frameworks */,
@@ -231,7 +232,6 @@
 				061004521D9A4CD5006230A9 /* libswscale.a in Frameworks */,
 				0610044E1D9A4CD5006230A9 /* libavfilter.a in Frameworks */,
 				0610044D1D9A4CD5006230A9 /* libavdevice.a in Frameworks */,
-				067ED0E51DB507EC008E1392 /* SDL2.framework in Frameworks */,
 				0610044C1D9A4CD5006230A9 /* libavcodec.a in Frameworks */,
 				061004511D9A4CD5006230A9 /* libswresample.a in Frameworks */,
 				0610044F1D9A4CD5006230A9 /* libavformat.a in Frameworks */,
@@ -244,6 +244,7 @@
 		061003B11D9A4B02006230A9 = {
 			isa = PBXGroup;
 			children = (
+				067EDCE91DB6008A008E1392 /* SDL2.framework */,
 				066DB68E1DACBF1300C9C514 /* kxmovie */,
 				061003D41D9A4CD5006230A9 /* FFmpeg-iOS */,
 				061003BC1D9A4B03006230A9 /* SDLPlayerDemo */,
@@ -267,7 +268,7 @@
 				062DDE2C1DAF81F600F8C07B /* OpenglVC */,
 				062DDE281DAF7DED00F8C07B /* FFmpegVC */,
 				061003C01D9A4B03006230A9 /* AppDelegate.h */,
-				061003C11D9A4B03006230A9 /* AppDelegate.mm */,
+				061003C11D9A4B03006230A9 /* AppDelegate.m */,
 				06F9A77C1DAF317100089630 /* MainVC.h */,
 				06F9A77D1DAF317100089630 /* MainVC.m */,
 				061003C61D9A4B03006230A9 /* Main.storyboard */,
@@ -282,7 +283,6 @@
 		061003BD1D9A4B03006230A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				067ED0E41DB507EC008E1392 /* SDL2.framework */,
 				0608C0141DAE0AC6004FAA77 /* jpgimage1_image_640_480.yuv */,
 				0608C0151DAE0AC6004FAA77 /* jpgimage1_video_640_480.yuv */,
 				0608C0121DADDCC3004FAA77 /* cuc_ieschool.mp4 */,
@@ -633,7 +633,7 @@
 				066DB69E1DACBF1300C9C514 /* KxMovieViewController.m in Sources */,
 				065B27631DA9E16400F4FDB7 /* OpenglView.m in Sources */,
 				06F9A77E1DAF317100089630 /* MainVC.m in Sources */,
-				061003C21D9A4B03006230A9 /* AppDelegate.mm in Sources */,
+				061003C21D9A4B03006230A9 /* AppDelegate.m in Sources */,
 				066DB69D1DACBF1300C9C514 /* KxMovieGLView.m in Sources */,
 				067ED0E31DB50776008E1392 /* LXHSDLPlayerVC.m in Sources */,
 				066DB69A1DACBF1300C9C514 /* KxAudioManager.m in Sources */,
@@ -669,7 +669,7 @@
 		061003CF1D9A4B03006230A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -720,7 +720,7 @@
 		061003D01D9A4B03006230A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -780,10 +780,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg-iOS/lib",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/SDL/lib",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Objc",
+				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = LY.SDLPlayerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -808,10 +809,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FFmpeg-iOS/lib",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/SDL/lib",
 				);
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-Objc",
+				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = LY.SDLPlayerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3A07EFDD66CC2163F0A8A478865F6312ECC21FFD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3A07EFDD66CC2163F0A8A478865F6312ECC21FFD" : 9223372036854775807,
+    "FD4E9A6F588D13879065FBFB1A4565A2DB1B3914" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C3851CD9-6D1C-4AA3-9A76-46D56362A990",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3A07EFDD66CC2163F0A8A478865F6312ECC21FFD" : "SDLForiOSPlayer\/",
+    "FD4E9A6F588D13879065FBFB1A4565A2DB1B3914" : "sdl-ios-framework\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SDLPlayerDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SDLPlayerDemo\/SDLPlayerDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:SkyHarute\/SDLForiOSPlayer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3A07EFDD66CC2163F0A8A478865F6312ECC21FFD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/manifest\/sdl-ios-framework.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD4E9A6F588D13879065FBFB1A4565A2DB1B3914"
+    }
+  ]
+}

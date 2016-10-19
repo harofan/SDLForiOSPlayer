@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		067EDDA61DB706D0008E1392 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDA51DB706D0008E1392 /* UIKit.framework */; };
+		067EDDA81DB706D0008E1392 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDA71DB706D0008E1392 /* Foundation.framework */; };
+		067EDDAA1DB706D0008E1392 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDA91DB706D0008E1392 /* CoreGraphics.framework */; };
+		067EDDAC1DB706D0008E1392 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDAB1DB706D0008E1392 /* GameController.framework */; };
+		067EDDAE1DB706D0008E1392 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDAD1DB706D0008E1392 /* CoreMotion.framework */; };
+		067EDDB01DB706D0008E1392 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDAF1DB706D0008E1392 /* OpenGLES.framework */; };
+		067EDDB21DB706D0008E1392 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDB11DB706D0008E1392 /* QuartzCore.framework */; };
+		067EDDB41DB706D0008E1392 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDB31DB706D0008E1392 /* CoreAudio.framework */; };
+		067EDDB61DB706D0008E1392 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDB51DB706D0008E1392 /* AudioToolbox.framework */; };
+		067EDDB81DB706D0008E1392 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDB71DB706D0008E1392 /* SDL2.framework */; };
+		067EDDBC1DB706D0008E1392 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 067EDDBB1DB706D0008E1392 /* main.m */; };
+		067EDDC41DB70704008E1392 /* SDLDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 067EDDC31DB70704008E1392 /* SDLDelegate.m */; };
+		067EDDC61DB70718008E1392 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EDDC51DB70718008E1392 /* SDL2.framework */; };
+		067EDDCE1DB70828008E1392 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067EDDCD1DB70828008E1392 /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		067EDDA21DB706D0008E1392 /* FFmpeg&SDLPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FFmpeg&SDLPlayerDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		067EDDA51DB706D0008E1392 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		067EDDA71DB706D0008E1392 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		067EDDA91DB706D0008E1392 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		067EDDAB1DB706D0008E1392 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		067EDDAD1DB706D0008E1392 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		067EDDAF1DB706D0008E1392 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		067EDDB11DB706D0008E1392 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		067EDDB31DB706D0008E1392 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		067EDDB51DB706D0008E1392 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		067EDDB71DB706D0008E1392 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = Library/Frameworks/SDL2.framework; sourceTree = DEVELOPER_DIR; };
+		067EDDBA1DB706D0008E1392 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		067EDDBB1DB706D0008E1392 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		067EDDC21DB70704008E1392 /* SDLDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLDelegate.h; sourceTree = "<group>"; };
+		067EDDC31DB70704008E1392 /* SDLDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLDelegate.m; sourceTree = "<group>"; };
+		067EDDC51DB70718008E1392 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
+		067EDDCD1DB70828008E1392 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		067EDD9F1DB706D0008E1392 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067EDDAA1DB706D0008E1392 /* CoreGraphics.framework in Frameworks */,
+				067EDDA61DB706D0008E1392 /* UIKit.framework in Frameworks */,
+				067EDDB41DB706D0008E1392 /* CoreAudio.framework in Frameworks */,
+				067EDDB21DB706D0008E1392 /* QuartzCore.framework in Frameworks */,
+				067EDDC61DB70718008E1392 /* SDL2.framework in Frameworks */,
+				067EDDAC1DB706D0008E1392 /* GameController.framework in Frameworks */,
+				067EDDB81DB706D0008E1392 /* SDL2.framework in Frameworks */,
+				067EDDB61DB706D0008E1392 /* AudioToolbox.framework in Frameworks */,
+				067EDDAE1DB706D0008E1392 /* CoreMotion.framework in Frameworks */,
+				067EDDA81DB706D0008E1392 /* Foundation.framework in Frameworks */,
+				067EDDB01DB706D0008E1392 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		067EDD991DB706D0008E1392 = {
+			isa = PBXGroup;
+			children = (
+				067EDDB91DB706D0008E1392 /* FFmpeg&SDLPlayerDemo */,
+				067EDDA41DB706D0008E1392 /* Frameworks */,
+				067EDDA31DB706D0008E1392 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		067EDDA31DB706D0008E1392 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				067EDDA21DB706D0008E1392 /* FFmpeg&SDLPlayerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		067EDDA41DB706D0008E1392 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				067EDDC51DB70718008E1392 /* SDL2.framework */,
+				067EDDA51DB706D0008E1392 /* UIKit.framework */,
+				067EDDA71DB706D0008E1392 /* Foundation.framework */,
+				067EDDA91DB706D0008E1392 /* CoreGraphics.framework */,
+				067EDDAB1DB706D0008E1392 /* GameController.framework */,
+				067EDDAD1DB706D0008E1392 /* CoreMotion.framework */,
+				067EDDAF1DB706D0008E1392 /* OpenGLES.framework */,
+				067EDDB11DB706D0008E1392 /* QuartzCore.framework */,
+				067EDDB31DB706D0008E1392 /* CoreAudio.framework */,
+				067EDDB51DB706D0008E1392 /* AudioToolbox.framework */,
+				067EDDB71DB706D0008E1392 /* SDL2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		067EDDB91DB706D0008E1392 /* FFmpeg&SDLPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				067EDDBA1DB706D0008E1392 /* info.plist */,
+				067EDDBB1DB706D0008E1392 /* main.m */,
+				067EDDC21DB70704008E1392 /* SDLDelegate.h */,
+				067EDDC31DB70704008E1392 /* SDLDelegate.m */,
+				067EDDCD1DB70828008E1392 /* Launch Screen.storyboard */,
+			);
+			path = "FFmpeg&SDLPlayerDemo";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		067EDDA11DB706D0008E1392 /* FFmpeg&SDLPlayerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 067EDDBF1DB706D0008E1392 /* Build configuration list for PBXNativeTarget "FFmpeg&SDLPlayerDemo" */;
+			buildPhases = (
+				067EDD9E1DB706D0008E1392 /* Sources */,
+				067EDD9F1DB706D0008E1392 /* Frameworks */,
+				067EDDA01DB706D0008E1392 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FFmpeg&SDLPlayerDemo";
+			productName = "FFmpeg&SDLPlayerDemo";
+			productReference = 067EDDA21DB706D0008E1392 /* FFmpeg&SDLPlayerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		067EDD9A1DB706D0008E1392 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					067EDDA11DB706D0008E1392 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PD5DSFUB55;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 067EDD9D1DB706D0008E1392 /* Build configuration list for PBXProject "FFmpeg&SDLPlayerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 067EDD991DB706D0008E1392;
+			productRefGroup = 067EDDA31DB706D0008E1392 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				067EDDA11DB706D0008E1392 /* FFmpeg&SDLPlayerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		067EDDA01DB706D0008E1392 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067EDDCE1DB70828008E1392 /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		067EDD9E1DB706D0008E1392 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067EDDC41DB70704008E1392 /* SDLDelegate.m in Sources */,
+				067EDDBC1DB706D0008E1392 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		067EDDBD1DB706D0008E1392 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		067EDDBE1DB706D0008E1392 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		067EDDC01DB706D0008E1392 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = PD5DSFUB55;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"~/Library/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				INFOPLIST_FILE = "FFmpeg&SDLPlayerDemo/info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		067EDDC11DB706D0008E1392 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = PD5DSFUB55;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"~/Library/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "FFmpeg&SDLPlayerDemo/info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		067EDD9D1DB706D0008E1392 /* Build configuration list for PBXProject "FFmpeg&SDLPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				067EDDBD1DB706D0008E1392 /* Debug */,
+				067EDDBE1DB706D0008E1392 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		067EDDBF1DB706D0008E1392 /* Build configuration list for PBXNativeTarget "FFmpeg&SDLPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				067EDDC01DB706D0008E1392 /* Debug */,
+				067EDDC11DB706D0008E1392 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 067EDD9A1DB706D0008E1392 /* Project object */;
+}

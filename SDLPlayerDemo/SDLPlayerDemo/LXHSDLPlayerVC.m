@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    SDL_Init(SDL_INIT_VIDEO);
 }
 
 
