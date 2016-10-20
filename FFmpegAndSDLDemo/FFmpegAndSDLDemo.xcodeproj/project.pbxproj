@@ -43,10 +43,11 @@
 		067EE10E1DB7657B008E1392 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EE10D1DB7657B008E1392 /* libbz2.1.0.tbd */; };
 		067EE1101DB76585008E1392 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EE10F1DB76585008E1392 /* libz.1.2.5.tbd */; };
 		067EE1121DB76592008E1392 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EE1111DB76592008E1392 /* libiconv.2.4.0.tbd */; };
+		06943CDF1DB8C60A00E6DE2F /* H264DecodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 06943CDE1DB8C60A00E6DE2F /* H264DecodeVC.m */; };
+		06943CE31DB8C6C200E6DE2F /* H264DecodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 06943CE21DB8C6C200E6DE2F /* H264DecodeTool.m */; };
 		06F0A64A1DB769EE00D6F42E /* OpenglVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0A6471DB769EE00D6F42E /* OpenglVC.m */; };
 		06F0A64B1DB769EE00D6F42E /* OpenglView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0A6491DB769EE00D6F42E /* OpenglView.m */; };
 		06F0A64D1DB76BE400D6F42E /* jpgimage1_image_640_480.yuv in Resources */ = {isa = PBXBuildFile; fileRef = 06F0A64C1DB76BE400D6F42E /* jpgimage1_image_640_480.yuv */; };
-		06F0A6511DB76D1F00D6F42E /* LXHSDLPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0A6501DB76D1F00D6F42E /* LXHSDLPlayerVC.m */; };
 		06F0A6531DB7754D00D6F42E /* bigbuckbunny_480x272.h265 in Resources */ = {isa = PBXBuildFile; fileRef = 06F0A6521DB772CF00D6F42E /* bigbuckbunny_480x272.h265 */; };
 /* End PBXBuildFile section */
 
@@ -195,13 +196,16 @@
 		067EE10D1DB7657B008E1392 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
 		067EE10F1DB76585008E1392 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		067EE1111DB76592008E1392 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		06943CDD1DB8C60A00E6DE2F /* H264DecodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H264DecodeVC.h; sourceTree = "<group>"; };
+		06943CDE1DB8C60A00E6DE2F /* H264DecodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H264DecodeVC.m; sourceTree = "<group>"; };
+		06943CE11DB8C6C200E6DE2F /* H264DecodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H264DecodeTool.h; sourceTree = "<group>"; };
+		06943CE21DB8C6C200E6DE2F /* H264DecodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H264DecodeTool.m; sourceTree = "<group>"; };
+		06943CE41DB8C82600E6DE2F /* DecodeH264Data_YUV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecodeH264Data_YUV.h; sourceTree = "<group>"; };
 		06F0A6461DB769EE00D6F42E /* OpenglVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglVC.h; sourceTree = "<group>"; };
 		06F0A6471DB769EE00D6F42E /* OpenglVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglVC.m; sourceTree = "<group>"; };
 		06F0A6481DB769EE00D6F42E /* OpenglView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglView.h; sourceTree = "<group>"; };
 		06F0A6491DB769EE00D6F42E /* OpenglView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglView.m; sourceTree = "<group>"; };
 		06F0A64C1DB76BE400D6F42E /* jpgimage1_image_640_480.yuv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jpgimage1_image_640_480.yuv; sourceTree = "<group>"; };
-		06F0A64F1DB76D1F00D6F42E /* LXHSDLPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHSDLPlayerVC.h; sourceTree = "<group>"; };
-		06F0A6501DB76D1F00D6F42E /* LXHSDLPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHSDLPlayerVC.m; sourceTree = "<group>"; };
 		06F0A6521DB772CF00D6F42E /* bigbuckbunny_480x272.h265 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bigbuckbunny_480x272.h265; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,7 +298,7 @@
 		067EDD871DB64480008E1392 /* sdltest1 */ = {
 			isa = PBXGroup;
 			children = (
-				06F0A64E1DB76CF400D6F42E /* LXHFFmpeg&SDLPlayerVC */,
+				06943CDC1DB8C5BD00E6DE2F /* H264DecodeVC */,
 				067EE1021DB76343008E1392 /* OpenGL ESVC */,
 				067EE0FB1DB75A16008E1392 /* FFmpegVC */,
 				067EDD881DB64480008E1392 /* info.plist */,
@@ -529,13 +533,24 @@
 			name = "OpenGL ESVC";
 			sourceTree = "<group>";
 		};
-		06F0A64E1DB76CF400D6F42E /* LXHFFmpeg&SDLPlayerVC */ = {
+		06943CDC1DB8C5BD00E6DE2F /* H264DecodeVC */ = {
 			isa = PBXGroup;
 			children = (
-				06F0A64F1DB76D1F00D6F42E /* LXHSDLPlayerVC.h */,
-				06F0A6501DB76D1F00D6F42E /* LXHSDLPlayerVC.m */,
+				06943CE01DB8C66100E6DE2F /* Tools */,
+				06943CDD1DB8C60A00E6DE2F /* H264DecodeVC.h */,
+				06943CDE1DB8C60A00E6DE2F /* H264DecodeVC.m */,
 			);
-			name = "LXHFFmpeg&SDLPlayerVC";
+			name = H264DecodeVC;
+			sourceTree = "<group>";
+		};
+		06943CE01DB8C66100E6DE2F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				06943CE11DB8C6C200E6DE2F /* H264DecodeTool.h */,
+				06943CE21DB8C6C200E6DE2F /* H264DecodeTool.m */,
+				06943CE41DB8C82600E6DE2F /* DecodeH264Data_YUV.h */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,11 +627,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				067EE0FA1DB75995008E1392 /* MainVC.m in Sources */,
+				06943CE31DB8C6C200E6DE2F /* H264DecodeTool.m in Sources */,
 				067EDD941DB64B55008E1392 /* SDLDelegate.mm in Sources */,
 				067EDD8A1DB64480008E1392 /* main.m in Sources */,
 				067EE0FE1DB75A86008E1392 /* FFmpegVC.m in Sources */,
 				06F0A64A1DB769EE00D6F42E /* OpenglVC.m in Sources */,
-				06F0A6511DB76D1F00D6F42E /* LXHSDLPlayerVC.m in Sources */,
+				06943CDF1DB8C60A00E6DE2F /* H264DecodeVC.m in Sources */,
 				06F0A64B1DB769EE00D6F42E /* OpenglView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

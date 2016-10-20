@@ -12,7 +12,7 @@
 
 #import "OpenglVC.h"
 
-#import "LXHSDLPlayerVC.h"
+#import "H264DecodeVC.h"
 
 #define screenSize [UIScreen mainScreen].bounds.size
 
@@ -73,7 +73,7 @@
             break;
             
         case 2:
-            cell.textLabel.text = @"雷博教程写的OpenGL渲染";
+            cell.textLabel.text = @"H264解码";
             break;
             
         case 3:
@@ -111,7 +111,7 @@
 
         case 2:
         {
-            LXHSDLPlayerVC * vc = [[LXHSDLPlayerVC alloc]init];
+            H264DecodeVC * vc = [[H264DecodeVC alloc]init];
             
             [self.navigationController pushViewController:vc animated:YES];
         }

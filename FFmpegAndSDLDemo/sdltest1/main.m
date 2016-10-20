@@ -4,7 +4,7 @@
  *  use however you want
  */
 
-//#include <SDL2/SDL.h>
+
 //#include <time.h>
 
 #import <UIKit/UIKit.h>
@@ -49,11 +49,16 @@
 //    SDL_RenderPresent(renderer);
 //}
 
+
+
+
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
+
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([SDLDelegate class]));
     }
+}
 //    SDL_Window *window;
 //    SDL_Renderer *renderer;
 //    int done;
@@ -99,4 +104,4 @@ int main(int argc, char *argv[])
 //    SDL_Quit();
 
 //    return 0;
-}
+
