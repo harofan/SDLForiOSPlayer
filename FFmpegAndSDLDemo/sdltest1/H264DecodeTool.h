@@ -32,6 +32,15 @@
 - (id)init;
 
 
+
+/**
+ 初始化FFmpeg
+
+ @param error 错误
+ */
+- (void)initFFmpeg:(NSError**)error;
+
+
 /**
  解码
 

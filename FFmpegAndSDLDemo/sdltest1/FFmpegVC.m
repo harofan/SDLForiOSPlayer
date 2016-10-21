@@ -201,7 +201,7 @@
             
             if (got_picture_ptr) {
                 //处理图像数据,用于转换像素
-                //裁剪
+                //使用这个api非常耗性能
                 //data解码后的图像像素数据
                 //linesize对视频来说是一行像素的大小
                 sws_scale(img_convert_ctx, (const uint8_t * const *)pFream->data, pFream->linesize, 0, pCodecCtx->height, pFreamYUV->data, pFreamYUV->linesize);

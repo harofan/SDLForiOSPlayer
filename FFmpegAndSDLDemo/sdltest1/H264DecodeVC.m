@@ -8,6 +8,8 @@
 
 #import "H264DecodeVC.h"
 
+#import "H264DecodeTool.h"
+
 @interface H264DecodeVC ()
 
 @end
@@ -19,6 +21,13 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    H264DecodeTool * tool = [[H264DecodeTool alloc]init];
+    
+    NSError * error;
+    [tool initFFmpeg:&error];
+    NSLog(@"%@",error);
+    
 }
 
 

@@ -16,8 +16,8 @@
 @interface H264DecodeTool ()
 
 {
-    int         pictureWidth;
-    
+    int             pictureWidth;
+    BOOL            isInit;
     AVCodec*        pCodec;
     AVCodecContext* pCodecCtx;
     AVFrame*        pVideoFrame;
@@ -31,38 +31,53 @@
 
 - (id) init
 {
-    //初始化FFmpeg
+    
     if(self=[super init])
     {
-        pCodec      =NULL;
-        pCodecCtx   =NULL;
-        pVideoFrame =NULL;
-        
-        pictureWidth=0;
-        
-        setRecordResolveState=0;
-        
-        av_register_all();
-        avcodec_register_all();
-        
-        pCodec=avcodec_find_decoder(AV_CODEC_ID_H264);
-        if(!pCodec){
-            printf("Codec not find\n");
-            return 0;
-        }
-        pCodecCtx=avcodec_alloc_context3(pCodec);
-        if(!pCodecCtx){
-            printf("allocate codec context error\n");
-            return 0;
-        }
-        
-        avcodec_open2(pCodecCtx, pCodec, NULL);
-        
-        pVideoFrame=av_frame_alloc();
-        
+        isInit = 0;
     }
     
     return self;
+}
+
+-(void)initFFmpeg:(NSError *__autoreleasing *)error{
+    
+    NSString * errorDomain = @"com.SkyHarute.FFmpegDecode.errorDomain";
+    NSDictionary * userInfo;
+    
+    
+    pCodec      =NULL;
+    pCodecCtx   =NULL;
+    pVideoFrame =NULL;
+    
+    pictureWidth=0;
+    
+    setRecordResolveState=0;
+    
+    av_register_all();
+    avcodec_register_all();
+    
+    pCodec=avcodec_find_decoder(AV_CODEC_ID_H264);
+//    if(!pCodec){
+        printf("Codec not find\n");
+        userInfo = @{@"errorInfo":@"Codec not find"};
+        *error = [NSError errorWithDomain:errorDomain code:-101 userInfo:userInfo];
+        return ;
+//    }
+    pCodecCtx=avcodec_alloc_context3(pCodec);
+    if(!pCodecCtx){
+        printf("allocate codec context error\n");
+        userInfo = @{@"errorInfo":@"allocate codec context error"};
+        *error = [NSError errorWithDomain:errorDomain code:-102 userInfo:userInfo];
+        return ;
+    }
+    
+    avcodec_open2(pCodecCtx, pCodec, NULL);
+    
+    pVideoFrame=av_frame_alloc();
+    
+    //已初始化
+    isInit = 1;
 }
 
 - (void)dealloc
@@ -79,6 +94,10 @@
 
 - (int)DecodeH264Frames: (unsigned char*)inputBuffer withLength:(int)aLength
 {
+    //没有初始化
+    if (!isInit) {
+        return -1;
+    }
     int gotPicPtr=0;
     int result=0;
     

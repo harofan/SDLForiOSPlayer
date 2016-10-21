@@ -27,6 +27,7 @@
   
     
     [self createUpUI];
+        
 }
 
 #pragma mark -  UI
