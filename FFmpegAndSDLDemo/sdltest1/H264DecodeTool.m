@@ -58,12 +58,12 @@
     avcodec_register_all();
     
     pCodec=avcodec_find_decoder(AV_CODEC_ID_H264);
-//    if(!pCodec){
+    if(!pCodec){
         printf("Codec not find\n");
         userInfo = @{@"errorInfo":@"Codec not find"};
         *error = [NSError errorWithDomain:errorDomain code:-101 userInfo:userInfo];
         return ;
-//    }
+    }
     pCodecCtx=avcodec_alloc_context3(pCodec);
     if(!pCodecCtx){
         printf("allocate codec context error\n");

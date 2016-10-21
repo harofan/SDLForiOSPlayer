@@ -45,6 +45,7 @@
 		067EE1121DB76592008E1392 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EE1111DB76592008E1392 /* libiconv.2.4.0.tbd */; };
 		06943CDF1DB8C60A00E6DE2F /* H264DecodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 06943CDE1DB8C60A00E6DE2F /* H264DecodeVC.m */; };
 		06943CE31DB8C6C200E6DE2F /* H264DecodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 06943CE21DB8C6C200E6DE2F /* H264DecodeTool.m */; };
+		06C8C4831DB9C5F700F13F00 /* OpenGLFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C8C4821DB9C5F700F13F00 /* OpenGLFrameView.m */; };
 		06F0A64A1DB769EE00D6F42E /* OpenglVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0A6471DB769EE00D6F42E /* OpenglVC.m */; };
 		06F0A64B1DB769EE00D6F42E /* OpenglView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F0A6491DB769EE00D6F42E /* OpenglView.m */; };
 		06F0A64D1DB76BE400D6F42E /* jpgimage1_image_640_480.yuv in Resources */ = {isa = PBXBuildFile; fileRef = 06F0A64C1DB76BE400D6F42E /* jpgimage1_image_640_480.yuv */; };
@@ -201,6 +202,8 @@
 		06943CE11DB8C6C200E6DE2F /* H264DecodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H264DecodeTool.h; sourceTree = "<group>"; };
 		06943CE21DB8C6C200E6DE2F /* H264DecodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = H264DecodeTool.m; sourceTree = "<group>"; };
 		06943CE41DB8C82600E6DE2F /* DecodeH264Data_YUV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecodeH264Data_YUV.h; sourceTree = "<group>"; };
+		06C8C4811DB9C5F700F13F00 /* OpenGLFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLFrameView.h; sourceTree = "<group>"; };
+		06C8C4821DB9C5F700F13F00 /* OpenGLFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLFrameView.m; sourceTree = "<group>"; };
 		06F0A6461DB769EE00D6F42E /* OpenglVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglVC.h; sourceTree = "<group>"; };
 		06F0A6471DB769EE00D6F42E /* OpenglVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenglVC.m; sourceTree = "<group>"; };
 		06F0A6481DB769EE00D6F42E /* OpenglView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglView.h; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 				06943CE11DB8C6C200E6DE2F /* H264DecodeTool.h */,
 				06943CE21DB8C6C200E6DE2F /* H264DecodeTool.m */,
 				06943CE41DB8C82600E6DE2F /* DecodeH264Data_YUV.h */,
+				06C8C4811DB9C5F700F13F00 /* OpenGLFrameView.h */,
+				06C8C4821DB9C5F700F13F00 /* OpenGLFrameView.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -628,6 +633,7 @@
 			files = (
 				067EE0FA1DB75995008E1392 /* MainVC.m in Sources */,
 				06943CE31DB8C6C200E6DE2F /* H264DecodeTool.m in Sources */,
+				06C8C4831DB9C5F700F13F00 /* OpenGLFrameView.m in Sources */,
 				067EDD941DB64B55008E1392 /* SDLDelegate.mm in Sources */,
 				067EDD8A1DB64480008E1392 /* main.m in Sources */,
 				067EE0FE1DB75A86008E1392 /* FFmpegVC.m in Sources */,
