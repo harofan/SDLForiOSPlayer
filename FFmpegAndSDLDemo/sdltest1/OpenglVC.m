@@ -5,7 +5,7 @@
 //  Created by fy on 2016/10/13.
 //  Copyright © 2016年 LY. All rights reserved.
 //
-
+//这里县渲染的是一张yuv图片,如果想渲染一段yuv视频,需要对yuv视频进行分割并循环,若屏幕出现绿色或打印说参数错误,一般是视频/图片的宽高不对引起的,请仔细查看资源宽高属性,视频目前需要一些特别的参数,我目前是写死的,这样很不好,后面有空了我会将他们进行合理的优化
 #import "OpenglVC.h"
 
 //#import <OpenGLES/ES3/gl.h>
